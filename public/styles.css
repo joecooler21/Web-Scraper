@@ -1,0 +1,25 @@
+body {
+    margin: 10px;
+}
+
+.article {
+    background-color: rgb(194, 191, 191);
+    color: white;
+    margin: 10px;
+    padding: 5px;
+}
+
+.article-header {
+    background-color: rgb(119, 15, 15);
+    color: white;
+    padding-left: 5px;
+}
+
+a {
+   color: black;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}

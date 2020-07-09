@@ -4,16 +4,16 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 router.get('/', (req, res) => {
-    res.render('index');
+    res.redirect('/scrape');
 });
 
-router.get('/scrape', (req, res) => {
+router.get('/scrape', async (req, res) => {
 
 
     var arr = [];
 
     console.log('request received');
-    axios.get('https://www.destructoid.com/')
+    let i = await axios.get('https://www.destructoid.com/')
         .then(html => {
 
             let $ = cheerio.load(html.data);
@@ -27,6 +27,7 @@ router.get('/scrape', (req, res) => {
                 let article = {};
                 article.text = text;
                 article.link = link;
+                article.id = i;
 
                 arr.push(article);
 
@@ -37,7 +38,6 @@ router.get('/scrape', (req, res) => {
 
             
         });
-
     res.render('index', {articles: arr});
 });
 
