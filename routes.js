@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
     res.redirect('/scrape');
 });
 
+router.post('/scrape', (req, res) => {
+    console.log(req.body);
+});
+
 router.get('/scrape', async (req, res) => {
 
 
@@ -30,15 +34,9 @@ router.get('/scrape', async (req, res) => {
                 article.id = i;
 
                 arr.push(article);
-
-
-                
             });
-
-
-            
         });
-    res.render('index', {articles: arr});
+    res.render('index', { articles: arr });
 });
 
 

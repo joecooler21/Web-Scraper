@@ -3,9 +3,7 @@
     <div class="article">
     <h3 class="article-header">{{this.text}}</h3>
     <a href="{{this.link}}" target="_blank">Link to article</a>
-    <input type="text"></input>
-    <button>Add Comment</button>
-    <button>Save Article</button>
+    <button data-text="{{this.text}}" data-link="{{this.link}}" onclick="save(this)" class="save-article">Save Article</button>
     </div>
     {{/each}}
     
