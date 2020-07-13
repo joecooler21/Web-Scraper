@@ -1,9 +1,13 @@
-<h1>Web Scraper Project</h1>
-    {{#each articles}}
-    <div class="article">
+<div class="article-header titlebar">
+    <h2>Latest Game Reviews from Destructoid</h2>
+    <button><a href="/saved">Saved Articles</a></button>
+</div>
+
+{{#each articles}}
+<div class="article">
     <h3 class="article-header">{{this.text}}</h3>
     <a href="{{this.link}}" target="_blank">Link to article</a>
-    <button data-text="{{this.text}}" data-link="{{this.link}}" onclick="save(this)" class="save-article">Save Article</button>
-    </div>
-    {{/each}}
-    
+    <button data-text="{{this.text}}" data-link="{{this.link}}" onclick="save(this)" class="save-article">Save
+        Article</button>
+</div>
+{{/each}}

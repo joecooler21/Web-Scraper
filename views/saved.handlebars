@@ -1,0 +1,18 @@
+<div class="article-header titlebar">
+    <h2>Saved Articles</h2>
+    <button><a href="/scrape">Articles</a></button>
+</div>
+
+{{#each articles}}
+<div class="article">
+    <h3 class="article-header">{{this.text}}</h3>
+    <a href="{{this.link}}">Link to Article</a>
+    <input type="text"></input>
+    <button data-id="{{this._id}}" class="comment" onclick="comment(this)">Add Comment</button>
+    <div>Comments:</div>
+    {{#each this.comments}}
+    <hr>
+    <div class="comments">{{this}}</div>
+    {{/each}}
+</div>
+{{/each}}

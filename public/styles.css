@@ -23,3 +23,15 @@ a:hover {
     color: black;
     text-decoration: none;
 }
+
+.titlebar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comments {
+
+    color: rgb(119, 15, 15);
+    
+}
