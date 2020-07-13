@@ -1,3 +1,5 @@
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines"
+
 const express = require('express');
 const exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
@@ -16,7 +18,7 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use('/', router);
 
-mongoose.connect("mongodb://localhost/articles", { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
 
